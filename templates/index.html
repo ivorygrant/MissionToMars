@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Mars Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap stuff -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Include the above in your HEAD tag ---------->
+  </head>
+  <body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <a class='navbar-brand' href='#'>Welcome Mars Afficionados!</a>
+    </nav>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col mt-4'>
+          <p>
+            Are you interested in seeing the latest Mars news from around the web?
+            If so, you have come to the right place! Click this button to see the latest
+            news and information about your favorite red planet!
+          </p>
+          <p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Get Latest Data!</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- card content start -->
+    <div class='row my-1 mx-1'>
+      <div class='col-md-4'>
+        <div class='card'>
+          <img src='https://chieftainpress.net/wp-content/uploads/2017/12/Mars.-2.jpg' alt='Mars' class='card-img-top' />
+          <div class='card-body'>
+            <h3 class='card-title text-capitalize'>Latest Mars News</h3>
+            <h5 class='text-capitalize'>{{mars_data['Latest Mars News'][0]}}</h5>
+            <p class='card-text'>
+              {{mars_data['Latest Mars News'][1]}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-8'>
+        <div class='card'>
+          <img src={{mars_data['Featured Mars Image']}} alt='Featured Mars Image' class='card-img-top' />
+          <div class='card-body'>
+            <h3 class='card-title text-capitalize'>Featured Mars Image</h3>
+            <p class='card-text'>
+              Full Size Image: {{mars_data['Featured Mars Image']}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row my-3 mx-1'>
+      <div class='col-md-4'>
+        <div class='card'>
+          <div class='card-body'>
+            <h3 class='card-title text-capitalize'>Latest Mars Weather Report</h3>
+            <p class='card-text'>
+              {{mars_data['Latest Mars Weather Report']}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-8'>
+        <div class='card'>
+          <div class='card-body'>
+            <h3 class='card-title text-capitalize'>Mars Facts</h3>
+            <p class='card-text'>
+              {{mars_data['Mars Facts'] | safe }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='card my-3 mx-3'>
+      <div class='card-body'>
+        <h3 class='card-title text-capitalize text-center'>Mars Hemispheres</h3>
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class='card'>
+              <img src={{mars_data['Mars Hemispheres'][0]['URL']+'/full.jpg'}} alt='' class='card-img-top' />
+              <div class='card-body'>
+                <h3 class='card-title text-capitalize text-center'>{{mars_data['Mars Hemispheres'][0]['Title']}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3'>
+            <div class='card'>
+              <img src={{mars_data['Mars Hemispheres'][1]['URL']+'/full.jpg'}} alt='' class='card-img-top' />
+              <div class='card-body'>
+                <h3 class='card-title text-capitalize text-center'>{{mars_data['Mars Hemispheres'][1]['Title']}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3'>
+            <div class='card'>
+              <img src={{mars_data['Mars Hemispheres'][2]['URL']+'/full.jpg'}} alt='' class='card-img-top' />
+              <div class='card-body'>
+                <h3 class='card-title text-capitalize text-center'>{{mars_data['Mars Hemispheres'][2]['Title']}}</h3>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3'>
+            <div class='card'>
+              <img src={{mars_data['Mars Hemispheres'][3]['URL']+'/full.jpg'}} alt='' class='card-img-top' />
+              <div class='card-body'>
+                <h3 class='card-title text-capitalize text-center'>{{mars_data['Mars Hemispheres'][3]['Title']}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
